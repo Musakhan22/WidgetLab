@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
+import 'core/theme/app_theme.dart';
+import 'features/library/presentation/screens/widget_library_screen.dart';
 
 void main() {
-  runApp(const MainApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const WidgetLabApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class WidgetLabApp extends StatelessWidget {
+  const WidgetLabApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(body: Center(child: Text('Hello World!'))),
+    return MaterialApp(
+      title: 'WidgetLab',
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme.dark,
+      home: const WidgetLibraryScreen(),
     );
   }
 }
